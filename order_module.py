@@ -1,6 +1,7 @@
 # order_module.py
 
 from product_module import get_product
+from discount_module import apply_discount
 
 def calculate_total_price(order_items):
     """
@@ -12,4 +13,4 @@ def calculate_total_price(order_items):
         product = get_product(product_id)
         if product:
             total += product["price"] * quantity
-    return total
+    return apply_discount(total)
